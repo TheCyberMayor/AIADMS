@@ -1,0 +1,15 @@
+2025-07-20 03:40:22,862 - src.ai_classifier.model_trainer - INFO - Generating 10000 synthetic samples
+2025-07-20 03:40:23,493 - src.ai_classifier.model_trainer - INFO - Generated 10000 samples: 7000 normal, 3000 attacks
+2025-07-20 03:40:23,977 - src.ai_classifier.model_trainer - INFO - Saved 10000 samples to training_data.csv
+2025-07-20 03:40:23,977 - src.ai_classifier.model_trainer - INFO - Starting model training
+2025-07-20 03:40:24,332 - src.ai_classifier.ddos_classifier - INFO - Created MLP model with 3 hidden layers
+2025-07-20 03:40:24,332 - src.ai_classifier.ddos_classifier - INFO - Created new model
+2025-07-20 03:40:28,452 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-07-20 03:42:07,519 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-07-20 03:42:07,595 - src.ai_classifier.ddos_classifier - INFO - Model and scaler saved successfully
+2025-07-20 03:42:07,596 - src.ai_classifier.ddos_classifier - INFO - Model training completed
+2025-07-20 03:42:08,318 - src.ai_classifier.ddos_classifier - INFO - Model evaluation completed. Accuracy: 1.0000
+2025-07-20 03:42:08,318 - src.ai_classifier.model_trainer - INFO - Training completed in 103.27 seconds
+2025-07-20 03:42:08,320 - src.ai_classifier.model_trainer - INFO - Test accuracy: 1.0000
+2025-07-20 03:42:08,891 - src.ai_classifier.ddos_classifier - INFO - Model evaluation completed. Accuracy: 1.0000
+2025-07-20 03:42:21,533 - __main__ - ERROR - Training failed: 'accuracy'

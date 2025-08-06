@@ -1,0 +1,15 @@
+2025-08-06 19:48:55,212 - __main__ - INFO - AI-ADMS System initialized
+2025-08-06 19:48:55,213 - __main__ - INFO - Initializing system components...
+2025-08-06 19:48:55,739 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-08-06 19:48:55,779 - src.ai_classifier.ddos_classifier - INFO - Loaded existing model and scaler
+2025-08-06 19:48:55,789 - __main__ - ERROR - Error initializing components: 'SystemReporter' object has no attribute 'logger'
+2025-08-06 21:15:05,058 - __main__ - INFO - AI-ADMS System initialized
+2025-08-06 21:15:05,061 - __main__ - INFO - Initializing system components...
+2025-08-06 21:15:05,476 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-08-06 21:15:05,491 - src.ai_classifier.ddos_classifier - INFO - Loaded existing model and scaler
+2025-08-06 21:15:05,493 - __main__ - ERROR - Error initializing components: 'SystemReporter' object has no attribute 'logger'
+2025-08-06 22:00:59,448 - __main__ - INFO - AI-ADMS System initialized
+2025-08-06 22:00:59,452 - __main__ - INFO - Initializing system components...
+2025-08-06 22:00:59,828 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-08-06 22:00:59,842 - src.ai_classifier.ddos_classifier - INFO - Loaded existing model and scaler
+2025-08-06 22:00:59,843 - __main__ - ERROR - Error initializing components: 'SystemReporter' object has no attribute 'logger'

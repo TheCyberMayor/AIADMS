@@ -1,0 +1,170 @@
+# AI-ADMS Configuration File
+
+# System Configuration
+system:
+  name: "AI-Driven Adaptive DDoS Mitigation System"
+  version: "1.0.0"
+  debug: true
+  log_level: "INFO"
+
+# Traffic Capture Configuration
+traffic_capture:
+  interface: "eth0"  # Network interface to monitor
+  packet_count: 1000  # Number of packets to capture per batch
+  timeout: 30  # Capture timeout in seconds
+  filter: ""  # BPF filter (empty for all traffic)
+  
+  # Feature extraction parameters
+  features:
+    - packet_size
+    - protocol
+    - ttl
+    - flow_rate
+    - syn_ack_ratio
+    - source_ip
+    - destination_ip
+    - port
+    - timestamp
+    - payload_length
+
+# AI Classifier Configuration
+ai_classifier:
+  model_type: "mlp"  # Multi-layer perceptron
+  input_dim: 10  # Number of input features
+  hidden_layers: [64, 32, 16]  # Hidden layer sizes
+  output_classes: 4  # Normal, UDP Flood, SYN Flood, HTTP Flood
+  learning_rate: 0.001
+  batch_size: 32
+  epochs: 100
+  validation_split: 0.2
+  
+  # Model file paths
+  model_path: "data/models/ddos_classifier.h5"
+  scaler_path: "data/models/feature_scaler.pkl"
+  
+  # Classification thresholds
+  confidence_threshold: 0.8
+  detection_threshold: 0.6
+
+# Anomaly Scoring Configuration
+anomaly_scoring:
+  baseline_window: 1000  # Number of packets for baseline calculation
+  update_frequency: 100  # Update baseline every N packets
+  
+  # Feature weights for anomaly calculation
+  feature_weights:
+    packet_size: 0.2
+    flow_rate: 0.3
+    syn_ack_ratio: 0.25
+    protocol: 0.15
+    ttl: 0.1
+  
+  # Anomaly thresholds
+  anomaly_threshold: 0.7
+  high_anomaly_threshold: 0.9
+
+# Reinforcement Learning Configuration
+rl_mitigation:
+  algorithm: "q_learning"
+  learning_rate: 0.1
+  discount_factor: 0.9
+  epsilon: 0.1  # Exploration rate
+  
+  # State space
+  states:
+    - normal
+    - low_attack
+    - medium_attack
+    - high_attack
+  
+  # Action space
+  actions:
+    - rate_limiting
+    - blacklisting
+    - syn_cookies
+    - deep_packet_inspection
+    - no_action
+  
+  # Q-table file
+  q_table_path: "data/models/q_table.pkl"
+  
+  # Mitigation parameters
+  rate_limit_threshold: 1000  # packets per second
+  blacklist_duration: 300  # seconds
+  syn_cookie_threshold: 0.8
+
+# Simulation Configuration
+simulation:
+  # Mininet configuration
+  mininet:
+    topology: "linear"  # linear, tree, custom
+    hosts: 4
+    switches: 2
+    links: 3
+    
+  # Attack generation
+  attacks:
+    udp_flood:
+      duration: 60  # seconds
+      intensity: 1000  # packets per second
+      target_port: 80
+    
+    syn_flood:
+      duration: 60
+      intensity: 500
+      target_port: 80
+    
+    http_flood:
+      duration: 60
+      intensity: 200
+      target_port: 80
+      method: "GET"
+
+# Reporting Configuration
+reporting:
+  # Logging
+  log_file: "logs/ai_adms.log"
+  csv_log: "logs/traffic_analysis.csv"
+  
+  # Dashboard
+  dashboard:
+    host: "localhost"
+    port: 8080
+    refresh_rate: 5  # seconds
+    
+  # Metrics
+  metrics:
+    - accuracy
+    - response_time
+    - false_positive_rate
+    - false_negative_rate
+    - throughput
+    - latency
+
+# Performance Configuration
+performance:
+  max_memory_usage: 2048  # MB
+  max_cpu_usage: 80  # percentage
+  cleanup_interval: 3600  # seconds
+  
+  # Threading
+  capture_threads: 2
+  analysis_threads: 4
+  mitigation_threads: 2
+
+# Security Configuration
+security:
+  # Fail-safe mechanisms
+  fail_safe:
+    max_false_positives: 100
+    max_response_time: 5  # seconds
+    emergency_shutdown: true
+  
+  # Rate limiting
+  rate_limits:
+    max_actions_per_minute: 60
+    max_blacklist_entries: 1000
+    
+  # Logging security
+  log_encryption: false
+  sensitive_data_masking: true 

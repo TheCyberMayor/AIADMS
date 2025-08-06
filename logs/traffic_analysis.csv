@@ -1,0 +1,1 @@
+timestamp,packet_size_mean,packet_size_std,flow_rate,syn_ack_ratio,tcp_ratio,udp_ratio,ttl_mean,ttl_std,payload_length_mean,payload_length_std,unique_sources,unique_destinations,port_entropy,ip_entropy,predicted_class,confidence,is_attack,attack_type,anomaly_score,is_anomalous,severity_level,classification_valid,response_time
